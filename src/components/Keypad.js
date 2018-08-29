@@ -9,18 +9,13 @@ export default class Keypad extends Component{
     this.handleKeyUp = this.handleKeyUp.bind(this)
   }
 
-  handleKeyUp(event){
-    this.setState({
-      [event.target.name]: event.target.value
-    })
-    console.log('entering password...')
-  }
+  handleKeyUp = () => {console.log("Entering password...")}
+
+
 
   render(){
     return(
-      <form>
-        <input type="password" name="password" onChange={this.handleKeyUp} value={this.state.password} />
-      </form>
+        <input type="password" name="password" onKeyUp={this.handleKeyUp} />
     )
   }
 
